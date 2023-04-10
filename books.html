@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>مكتبة الكتب</title>
+	<style>
+	  @import url('https://fonts.googleapis.com/css2?family=Amiri&display=swap');
+	*{
+	  font-family: "Amiri",serif;
+	  font-weight: 400;
+	}
+	h1{
+	  color: brown;
+	  font-size: 50px
+	}
+	body{
+	  font-family: "Work Sans", sans-serif;
+	}
+	  .book-list {
+	   display: flex;
+	   flex-wrap: wrap;
+	   margin-left: 50px;
+}
+.book-item {
+  transition: 0.50s;
+	width: 250px;
+	height: 350px;
+	margin: 10px;
+	padding: 10px;
+	background-color: #f0f0f0;
+	border-radius: 5px;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+.book-item:hover {
+	transform: translateY(-10px);
+}
+.book-item img {
+	width: 100%;
+	height: 250px;
+	object-fit: cover;
+	border-radius: 5px;
+}
+.book-item h2 {
+	margin: 10px 0 5px 0;
+	font-size: 1.2rem;
+}
+.book-item p {
+	margin: 0;
+	font-size: 1rem;
+	color: #555;
+}
+.book-item {
+  transition: 0.50s;
+	width: 250px;
+	height: 400px;
+	margin: 10px;
+	padding: 10px;
+	background-color: #f0f0f0;
+	border-radius: 5px;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+.book-item:hover {
+	transform: translateY(-10px);
+}
+.book-item img {
+	width: 100%;
+	height: 270px;
+	border-radius: 5px
+}
+.book-item h2 {
+	margin: 10px 0 5px 0;
+	font-size: 1.2rem;
+}
+.book-item p {
+	margin: 0;
+	font-size: 1rem;
+	color: #555;
+}
+nav{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: brown;
+  margin-top: 10px
+}
+input{
+  width: 200px;
+  text-align: right;
+  border: 1px brown solid;
+  border-radius: 5px;
+}
+nav button{
+  background: brown;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+.levels button{
+  border: none;
+  background: brown;
+  color: white;
+  border-radius: 10px;
+  width: 40px;
+  transition: 1s;
+}
+.levels button:hover{
+  transform: translateY(-10px);
+}
+html {
+  scroll-behavior: smooth;
+}
+	</style>
+</head>
+<body>
+<nav>  
+<form onsubmit="searchFunction()">
+  <input type="search" name="search" id="searchInput" placeholder=" ...ابحث عن الكتب">
+  <button type="submit">بحث</button>
+</form>
+
+  <h2>عالم الكتب</h2>
+
+</nav>
+<hr>
+  <center>
+	<h1>المكتبة الالكترونية</h1>
+	<div class="book-list" align="center">
+		<div class="book-item" onclick="window.location.href='book1.html'">
+			<img src="كليلة-ودمنة.jpg">
+			<h2>كليلة و دمنة</h2>
+			<p>اسم المؤلف: الفيلسوف الهندي ديبيا</p>
+			<button>اقرأه الان</button>
+		</div>
+		<div class="book-item" onclick="window.location.href='book2.html'">
+			<img src="1612277205.jpg">
+			<h2>كن انت</h2>
+			<p>اسم المؤلف: إيهاب حمارنة</p>
+			<button>اقرأه الان</button>
+			</div>
+		<div class="book-item" onclick="window.location.href='book3.html'">
+			<img src="16008747-213x300.jpg">
+			<h2>الإنطلاق من الصفر</h2>
+			<p>اسم المؤلف: توراو توكودا</p>
+			<button>اقراه الان</button>
+		</div>
+	</div>
+	<br>
+	
+	<div class="book-list" align="center">
+	  <div class="book-item" onclick="window.location.href='book4.html'">
+	    <img src="10691701-204x300.jpg">
+	    <h2>قيس وليلى والذئب</h2>
+	    <p>اسم المؤلف: بثينة العيسى</p>
+			<button>اقراه الان</button>
+	  </div>
+	  <div class="book-item" onclick="window.location.href='book5.html'">
+	    <img src="1351678511.jpg">
+	    <h2>تاكسي: حواديت المشاوير</h2>
+	    <p> اسم المؤلف: خالد الخميسي</p>
+			<button>اقراه الان</button>
+	  </div>
+	  <div class="book-item" onclick="window.location.href='book6.html'" style="height: 430px">
+	    <img src="2526388945-200x300.jpg">
+	    <h2>القوانين الروحانية السبعة للنجاح: الدليل العملي لتحقيق أحلامك</h2>
+	    <p>اسم المؤلف: ديباك شوبرا</p>
+			<button>اقراه الان</button>
+	  </div>
+	</div>
+  </center>
+  <br>
+  <center>
+  <div class="levels">
+    <button>1</button>
+    <button>2</button>
+    <button>3</button>
+    <button>4</button>
+  </div>
+  </center>
+  <script>
+function searchFunction() {
+  var input, filter, bookList, bookItem, title, i;
+  input = document.getElementById("searchInput");
+  filter = input.value.toUpperCase();
+  bookList = document.getElementsByClassName("book-list");
+  for (i = 0; i < bookList.length; i++) {
+    bookItem = bookList[i].getElementsByClassName("book-item");
+    for (j = 0; j < bookItem.length; j++) {
+      title = bookItem[j].getElementsByTagName("h2")[0];
+      if (title.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        bookItem[j].style.display = "";
+      } else {
+        bookItem[j].style.display = "none";
+      }
+    }
+  }
+  event.preventDefault();
+}
+</script>
+
+</body>
+</html>
